@@ -18,7 +18,7 @@ const server = new ApolloServer({
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({ origin: true, credentials: true }));
 app.use(
   path,
   jwt({
@@ -51,7 +51,7 @@ app.use(
 server.applyMiddleware({
   app,
   path,
-  cors: { origin: "http://localhost:3000", credentials: true },
+  cors: { origin: true, credentials: true },
 });
 
 const port = process.env.PORT ?? 5001;
